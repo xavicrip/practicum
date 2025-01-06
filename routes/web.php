@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +32,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::resource('patients', Controller::class);
-Route::resource('doctors', Controller::class);
+Route::resource('patients', PatientController::class);
+Route::resource('doctors', DoctorController::class);
+
+//Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
